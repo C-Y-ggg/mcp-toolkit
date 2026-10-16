@@ -1,6 +1,14 @@
+import logging
 from mcp.server.mcpserver import MCPServer
 
+from mcp_toolkit.tools.rag_search import register_rag_tools
+
+logging.basicConfig(level=logging.INFO)
+
 mcp = MCPServer("RAG Toolkit")
+
+# 注册工具
+register_rag_tools(mcp)
 
 
 @mcp.tool()
